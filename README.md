@@ -1,38 +1,69 @@
-# django-todo
-A simple todo app built with django
+# Application Development and Deployment on AWS EC2 using CI/CD Pipeline with Docker
 
-![todo App](https://raw.githubusercontent.com/shreys7/django-todo/develop/staticfiles/todoApp.png)
-### Setup
-To get this repository, run the following command inside your git enabled terminal
-```bash
-$ git clone https://github.com/shreys7/django-todo.git
-```
-You will need django to be installed in you computer to run this app. Head over to https://www.djangoproject.com/download/ for the download guide
+## Table of Contents
+1. Introduction
+2. Prerequisites
+3. Setting Up AWS EC2 Instance
+4. Dockerizing the Application
+5. Setting Up CI/CD Pipeline
+   - Choosing CI/CD Tool
+   - Configuring CI/CD Pipeline
+6. Deploying the Application
+7. Conclusion
+8. References
 
-Once you have downloaded django, go to the cloned repo directory and run the following command
+## 1. Introduction
 
-```bash
-$ python manage.py makemigrations
-```
+In this document, we will discuss the process of developing and deploying an application on Amazon Web Services (AWS) EC2 using a Continuous Integration/Continuous Deployment (CI/CD) pipeline. We will leverage Docker for containerization to ensure consistency across environments and streamline the deployment process.
 
-This will create all the migrations file (database migrations) required to run this App.
+## 2. Prerequisites
 
-Now, to apply this migrations run the following command
-```bash
-$ python manage.py migrate
-```
+Before proceeding, ensure the following prerequisites are met:
+- AWS account with permissions to create EC2 instances and manage other necessary services.
+- Basic understanding of Docker and containerization concepts.
+- Familiarity with CI/CD principles and tools.
 
-One last step and then our todo App will be live. We need to create an admin user to run this App. On the terminal, type the following command and provide username, password and email for the admin user
-```bash
-$ python manage.py createsuperuser
-```
+## 3. Setting Up AWS EC2 Instance
 
-That was pretty simple, right? Now let's make the App live. We just need to start the server now and then we can start using our simple todo App. Start the server by following command
+1. Log in to the AWS Management Console.
+2. Navigate to the EC2 dashboard.
+3. Launch a new EC2 instance with appropriate configuration (instance type, security groups, etc.).
+4. Connect to the EC2 instance using SSH.
 
-```bash
-$ python manage.py runserver
-```
+## 4. Dockerizing the Application
 
-Once the server is hosted, head over to http://127.0.0.1:8000/todos for the App.
+1. Prepare your application for Dockerization by creating a Dockerfile.
+2. Define the necessary dependencies and configurations in the Dockerfile.
+3. Build the Docker image using the Docker CLI.
+4. Test the Docker image locally to ensure it functions as expected.
 
-Cheers and Happy Coding :)
+## 5. Setting Up CI/CD Pipeline
+
+### Choosing CI/CD Tool
+
+1. Evaluate different CI/CD tools such as Jenkins, CircleCI, GitLab CI/CD, etc.
+2. Choose the tool that best fits your requirements and infrastructure.
+
+### Configuring CI/CD Pipeline
+
+1. Configure the CI/CD pipeline to monitor your application repository for changes.
+2. Define the stages of the pipeline, including build, test, and deploy.
+3. Integrate Docker into the pipeline to build and push Docker images to a registry.
+4. Configure deployment steps to deploy the application to the EC2 instance.
+
+## 6. Deploying the Application
+
+1. Ensure that the CI/CD pipeline is triggered automatically upon code changes.
+2. Monitor the pipeline execution and address any failures or issues.
+3. Once the pipeline successfully completes, verify the deployment on the EC2 instance.
+4. Monitor application performance and troubleshoot any issues that arise.
+
+## 7. Conclusion
+
+In conclusion, deploying applications on AWS EC2 using a CI/CD pipeline with Docker significantly streamlines the development and deployment process. By automating the build, test, and deployment stages, teams can deliver updates faster and with greater reliability.
+
+## 8. References
+
+- AWS Documentation: [https://docs.aws.amazon.com/](https://docs.aws.amazon.com/)
+- Docker Documentation: [https://docs.docker.com/](https://docs.docker.com/)
+- CI/CD Tool Documentation (Jenkins, CircleCI, GitLab CI/CD, etc.)
